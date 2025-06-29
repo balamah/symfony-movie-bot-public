@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: session-service-set-variable
+# key: $_SESSION[]
+# --
+
+$this->sessionService->setVariable(
+	(string) $message->chat->id, ${1:variable}, ${2:value}
+);

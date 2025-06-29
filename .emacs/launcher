@@ -1,0 +1,5 @@
+#!/bin/sh
+
+containerId=$(docker ps -a | grep php | awk '{print $1}' | shuf -n 1)
+
+docker exec -it "$containerId" /bin/bash -c "bin/console telegram:polling:start"

@@ -1,0 +1,6 @@
+# config/packages/telegram_bot.yaml
+
+telegram_bot:
+  api_token: 7774345839:JYLWuwyDtSRYLYKWpwcLxDeAEVUKgKQqUDQ
+#  webhook:
+#    url: https://localhost/tg-webhook

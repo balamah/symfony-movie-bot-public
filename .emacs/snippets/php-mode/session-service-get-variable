@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: session-service-get-variable-assign
+# key: $_SESSION->get
+# --
+
+${1:variableName} = $this->sessionService->getVariable(
+	(string) $message->chat->id, ${2:variable}
+);

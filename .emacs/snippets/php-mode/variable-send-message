@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: send-message
+# key: sendv:::
+# --
+
+$replyMessage = $this->messageService->getMessage(
+	$message, $0
+);

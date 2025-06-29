@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: command-class
+# key: command:::
+# --
+
+use App\Message\Resources;
+
+use Luzrain\TelegramBotBundle\Attribute\OnCommand;
+use Luzrain\TelegramBotBundle\TelegramCommand;
+use Luzrain\TelegramBotApi\Method;
+use Luzrain\TelegramBotApi\Type;
+
+final class `(file-name-sans-extension (file-name-nondirectory buffer-file-name))` extends TelegramCommand
+{
+    #[OnCommand('/${1:command name}')]
+    public function __invoke(Type\Message $message): Method
+    {
+        return Resources::getMessage($message, $0);
+    }
+}

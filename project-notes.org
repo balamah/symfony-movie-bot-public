@@ -1,0 +1,109 @@
+#+TITLE: Project notes
+
+* Table of contents :toc:
+- [[#user-favorite-movies][User favorite movies]]
+  - [[#code][Code]]
+  - [[#output][Output]]
+- [[#user-waited-movies][User waited movies]]
+  - [[#output-1][Output]]
+
+* User favorite movies
+** Code
+#+begin_src php
+$this->userService->getUser((string) $message->chat->id)->
+    getUserFavoriteMovies()
+#+end_src
+
+** Output
+#+begin_src php
+^ Doctrine\ORM\PersistentCollection^ {#588
+  #collection: Doctrine\Common\Collections\ArrayCollection^ {#605
+    -elements: array:5 [
+      0 => App\Entity\UserFavoriteMovie^ {#765
+        -id: 1
+        -user_id: App\Entity\User^ {#700
+          -id: 1
+          -userFavoriteMovies: Doctrine\ORM\PersistentCollection^ {#588}
+          -telegram_id: "807947606"
+          -first_name: "Miha"
+          -last_name: "Balandin𓆏ࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩ"
+          -username: "mihabalandin"
+          -created_at: DateTime @1732384138 {#704
+            date: 2024-11-23 17:48:58.0 UTC (+00:00)
+          }
+          -is_banned: null
+        }
+        -movie_favorite_id: Proxies\__CG__\App\Entity\FavoriteMovie^ {#809
+          -id: 1
+          -name: ? ?string
+          -lazyObjectState: Symfony\Component\VarExporter\Internal\LazyObjectState^ {#618
+            +status: UNINITIALIZED_FULL
+            +realInstance: ? object
+             …2
+          }
+        }
+      }
+      1 => App\Entity\UserFavoriteMovie^ {#738
+        -id: 2
+        -user_id: App\Entity\User^ {#700}
+        -movie_favorite_id: Proxies\__CG__\App\Entity\FavoriteMovie^ {#757
+          -id: 21
+          -name: ? ?string
+          -lazyObjectState: Symfony\Component\VarExporter\Internal\LazyObjectState^ {#756
+            +status: UNINITIALIZED_FULL
+            +realInstance: ? object
+             …2
+          }
+        }
+      }
+      2 => App\Entity\UserFavoriteMovie^ {#808
+        -id: 3
+        -user_id: App\Entity\User^ {#700}
+        -movie_favorite_id: Proxies\__CG__\App\Entity\FavoriteMovie^ {#810
+          -id: 22
+          -name: ? ?string
+          -lazyObjectState: Symfony\Component\VarExporter\Internal\LazyObjectState^ {#811
+            +status: UNINITIALIZED_FULL
+            +realInstance: ? object
+             …2
+          }
+        }
+      }
+      3 => App\Entity\UserFavoriteMovie^ {#812
+        -id: 5
+        -user_id: App\Entity\User^ {#700}
+        -movie_favorite_id: Proxies\__CG__\App\Entity\FavoriteMovie^ {#810}
+      }
+      4 => App\Entity\UserFavoriteMovie^ {#711
+        -id: 7
+        -user_id: App\Entity\User^ {#700}
+        -movie_favorite_id: App\Entity\FavoriteMovie^ {#580
+          -id: 24
+          -name: "something other"
+        }
+      }
+    ]
+  }
+  #initialized: true
+  -snapshot: array:5 [ …5]
+  -owner: App\Entity\User^ {#700}
+  -association: array:15 [ …15]
+  -em: ContainerQO30d7T\EntityManagerGhost614a58f^ {#305 …12}
+  -backRefFieldName: "user_id"
+  -typeClass: Doctrine\ORM\Mapping\ClassMetadata {#701 …}
+  -isDirty: false
+}
+#+end_src
+
+* User waited movies
+** Output
+#+begin_src php
+^ array:1 [
+  0 => array:2 [
+    "name" => "A Minecraft Movie"
+    "release_date" => DateTime @1743724800 {#834
+      date: 2025-04-04 00:00:00.0 UTC (+00:00)
+    }
+  ]
+]
+#+end_src
